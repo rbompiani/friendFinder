@@ -2,8 +2,83 @@
 <html>
     <head>
         <title>Friend Finder Survey</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Friend Finder Survey</h1>
+        <main class="container">
+            <h1>Friend Finder Survey</h1>
+            <form>
+                <fieldset class="form-group mb-5">
+                    <legend>About You</legend>
+                    <label for="name">Name (required)</label>
+                    <input type="text" class="form-control" id="name" placeholder="First Name" required>
+                    <label for="photo">Link to Photo Image (required)</label>
+                    <input type="text" class="form-control" id="photo" placeholder="Online Image URL" required>
+                </fieldset>
+                <hr>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 1</legend>
+                    <label for="q1">Your mind is always buzzing with unexplored ideas and plans.</label><br/>
+                    <input id="q1" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 2</legend>
+                    <label for="q2">Generally speaking, you rely more on your experience than your imagination.</label><br/>
+                    <input id="q2" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 3</legend>
+                    <label for="q3">You find it easy to stay relaxed and focused even when there is some pressure.</label><br/>
+                    <input id="q3" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 4</legend>
+                    <label for="q4">You rarely do something just out of sheer curiosity.</label><br/>
+                    <input id="q4" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 5</legend>
+                    <label for="q5">You find it easy to stay relaxed and focused even when there is some pressure.</label><br/>
+                    <input id="q5" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 6</legend>
+                    <label for="q6">It is often difficult for you to relate to other people’s feelings.</label><br/>
+                    <input id="q6" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 7</legend>
+                    <label for="q7">In a discussion, truth should be more important than people’s sensitivities.</label><br/>
+                    <input id="q7" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 8</legend>
+                    <label for="q8">You rarely get carried away by fantasies and ideas.</label><br/>
+                    <input id="q8" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 9</legend>
+                    <label for="q9">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label><br/>
+                    <input id="q9" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <legend>Question 10</legend>
+                    <label for="q10">You feel more energetic after spending time with a group of people.</label><br/>
+                    <input id="q10" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
+                    <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>            
+        </main>
+
     </body>
 </html>
