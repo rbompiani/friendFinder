@@ -7,6 +7,8 @@ var apiRoutes = require('./routing/apiRoutes')
 var app = express();
 app.listen(3000);
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // route html requests
 htmlRoutes(app, path);

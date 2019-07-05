@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Friend Finder Survey</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
@@ -76,9 +77,38 @@
                     <input id="q10" type="range" class="custom-range"  min="1" max="5" steps="1" value="1">
                     <span>Strongly Disagree</span><span class="float-right">Strongly Agree</span>
                 </fieldset>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
             </form>            
         </main>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+               
+                $("#submitButton").on("click", function(event) {
+
+                    event.preventDefault();
+                    
+                    // create new object from form data
+                    var newFriend = {
+                        name: $("#name").val().trim(),
+                        photo: $("#photo").val().trim(),
+                        scores: [$("#q1").val(),$("#q2").val(),$("#q3").val(),$("#q4").val(),$("#q5").val(),$("#q6").val(),$("#q7").val(),$("#q8").val(),$("#q9").val(),$("#q10").val()]
+                    };
+
+                    newFriend.scores = newFriend.scores.map(Number);
+                    console.log(newFriend);
+                    
+                    $.post("/api/friends", newFriend)
+                        .then(function(data) {
+                        console.log("adding your info", data);
+                        alert("Adding friend...");
+                    });
+                 });       
+                           
+            });
+
+          </script>
 
     </body>
 </html>
