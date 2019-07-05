@@ -1,0 +1,23 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "an application to match you with like-minded people",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbompiani/friendFinder.git"
+  },
+  "keywords": [
+    "friends",
+    "match"
+  ],
+  "author": "rbompiani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbompiani/friendFinder/issues"
+  },
+  "homepage": "https://github.com/rbompiani/friendFinder#readme"
+}
