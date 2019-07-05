@@ -16,23 +16,43 @@ var friends = [
         "scores":[1,1,4,1,5,1,2,1,4,5]
     }, 
     {
-        "name":"George",
+        "name":"John",
         "photo":"https://upload.wikimedia.org/wikipedia/commons/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg",
         "scores":[5,5,4,5,5,1,5,5,4,5]
     }      
 ];
 
-  //add to friends array with survey results
-  var addFriend = function(friend){
-      friend.scores = friend.scores.map(Number);
-      friends.push(friend);
-      console.log("added "+friend.name+" friend to the friends list");
-  };
+//add to friends array with survey results
+var addFriend = function(friend){
+    friend.scores = friend.scores.map(Number);
+    findMatch(friend);
+    friends.push(friend);
+    console.log("added "+friend.name+" friend to the friends list");
 
-  //match your results with the best candidate in the friends array
-  var findMatch = function(){
-      console.log("finding a match");
-  };
+};
+
+//match your results with the best candidate in the friends array
+var findMatch = function(friend){
+    console.log("finding a match");
+    var friendsDelta = [];
+    var curClosest;
+    var yourMatch;
+    for (var i=0; i<friends.length; i++){
+        var formDelta=[];
+        for(var scoreIdx=0; scoreIdx<friends[i].scores.length; scoreIdx++){
+            var questDelta = friend.scores[scoreIdx]-friends[i].scores[scoreIdx];
+            formDelta.push(Math.abs(questDelta));
+        }
+        var formTotal = formDelta.reduce((total, amount) => total + amount);
+        friendsDelta.push(formTotal);
+        if(!curClosest || formTotal<curClosest) {
+            curClosest = formTotal;
+            yourMatch = friends[i];
+        }
+    }
+    console.log("Here's how you scored among all the friends", friendsDelta);
+    console.log("Your match is ", yourMatch.name);
+};
 
   //export values and functions to be used in other files
   module.exports = {
