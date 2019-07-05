@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/rbompiani/friendFinder/issues"
   },
-  "homepage": "https://github.com/rbompiani/friendFinder#readme"
+  "homepage": "https://github.com/rbompiani/friendFinder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
 }
