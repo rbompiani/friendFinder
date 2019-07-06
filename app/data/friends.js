@@ -22,13 +22,15 @@ var friends = [
     }      
 ];
 
+var match;
+
 //add to friends array with survey results
 var addFriend = function(friend){
     friend.scores = friend.scores.map(Number);
     findMatch(friend);
     friends.push(friend);
     console.log("added "+friend.name+" friend to the friends list");
-
+    return match;
 };
 
 //match your results with the best candidate in the friends array
@@ -52,6 +54,7 @@ var findMatch = function(friend){
     }
     console.log("Here's how you scored among all the friends", friendsDelta);
     console.log("Your match is ", yourMatch.name);
+    match = yourMatch;
 };
 
   //export values and functions to be used in other files

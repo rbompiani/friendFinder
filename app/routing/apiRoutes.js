@@ -7,6 +7,7 @@ module.exports = function(app, path){
 
     app.post("/api/friends", function(req,res){
         var newFriend = req.body;
-        friendData.addFriend(newFriend);
+        var yourMatch = friendData.addFriend(newFriend);
+        return res.json(yourMatch);
     });
 }
