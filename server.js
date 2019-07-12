@@ -1,8 +1,8 @@
 // --------- DEPENDENCIES ------------//
 var express = require("express");
 var path = require("path");
-var htmlRoutes = require('./routing/htmlRoutes');
-var apiRoutes = require('./routing/apiRoutes')
+var htmlRoutes = require('./app/routing/htmlRoutes');
+var apiRoutes = require('./app/routing/apiRoutes')
 
 var app = express();
 app.listen(process.env.PORT || 3000, function(){
