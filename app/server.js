@@ -5,7 +5,8 @@ var htmlRoutes = require('./routing/htmlRoutes');
 var apiRoutes = require('./routing/apiRoutes')
 
 var app = express();
-app.listen(3000);
+var PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
